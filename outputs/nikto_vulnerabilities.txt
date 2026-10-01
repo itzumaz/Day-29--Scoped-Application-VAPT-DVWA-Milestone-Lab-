@@ -1,0 +1,53 @@
+┌──(kali㉿kali)-[~]
+└─$ nikto -h http://192.168.145.134/dvwa/ -o day29_nikto.txt
+- Nikto v2.6.1
+---------------------------------------------------------------------------
++ Target IP:          192.168.145.134
++ Target Hostname:    192.168.145.134
++ Target Port:        80
++ Platform:           Unknown
++ Start Time:         2026-09-29 09:43:28 (GMT-4)
+---------------------------------------------------------------------------
++ Server: Apache/2.2.14 (Ubuntu) mod_mono/2.4.3 PHP/5.3.2-1ubuntu4.30 with Suhosin-Patch proxy_html/3.0.1 mod_python/3.3.1 Python/2.6.5 mod_ssl/2.2.14 OpenSSL/0.9.8k Phusion_Passenger/4.0.38 mod_perl/2.0.4 Perl/v5.10.1
++ [000287] /dvwa/: Retrieved x-powered-by header: PHP/5.3.2-1ubuntu4.30.
++ [750500] /dvwa/docs/: Directory indexing found. See: CWE-548
++ [999984] /dvwa/robots.txt: Server may leak inodes via ETags, header found with file /dvwa/robots.txt, inode: 279578, size: 26, mtime: Wed Jul 10 20:42:12 2013. See: https://nvd.nist.gov/vuln/detail/CVE-2003-1418
++ No CGI Directories found (use '-C all' to force check all possible dirs). CGI tests skipped.
++ [800132] /: mod_ssl/2.2.14 OpenSSL/0.9.8k Phusion_Passenger/4.0.38 mod_perl/2.0.4 Perl/v5.10.1 - mod_ssl 2.8.7 and lower are vulnerable to a remote buffer overflow which may allow a remote shell.
++ [800262] /: PHP/5.3 - PHP 3/4/5 and 7.0 are End of Life products without support.
++ [000434] /: HTTP TRACE method is active and replies which suggests the host is vulnerable to XST. See: https://owasp.org/www-community/attacks/Cross_Site_Tracing
++ [600595] OpenSSL/0.9.8k appears to be outdated (current is at least 4.0.1).
++ [600487] mod_perl/2.0.4 appears to be outdated (current is at least 2.0.13).
++ [600494] mod_python/3.3.1 appears to be outdated (current is at least 3.5.0).
++ [600625] PHP/5.3.2-1ubuntu4.30 appears to be outdated (current is at least 8.5.8).
++ [600475] mod_mono/2.4.3 appears to be outdated (current is at least 3.13).
++ [600932] Phusion_Passenger/4.0.38 appears to be outdated (current is at least 6.0.14).
++ [600511] mod_ssl/2.2.14 appears to be outdated (current is at least 2.9.6) (may depend on server version).
++ [600652] Python/2.6.5 appears to be outdated (current is at least 3.14.6).
++ [600642] proxy_html/3.0.1 appears to be outdated (current is at least 3.1.2).
++ [600050] Apache/2.2.14 appears to be outdated (current is at least 2.4.68).
++ [600620] Perl/v5.10.1 appears to be outdated (current is at least v5.44.0).
++ [999100] /dvwa/index: Uncommon header(s) 'tcn' found, with contents: list.
++ [999965] /dvwa/index: Apache mod_negotiation is enabled with MultiViews, which allows attackers to easily brute force file names. The following alternatives for 'index' were found: index.php. See: https://exchange.xforce.ibmcloud.com/vulnerabilities/8275
++ [013587] /dvwa/: Suggested security header missing: content-security-policy. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
++ [013587] /dvwa/: Suggested security header missing: referrer-policy. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy
++ [013587] /dvwa/: Suggested security header missing: permissions-policy. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy
++ [013587] /dvwa/: Suggested security header missing: x-content-type-options. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options
++ [013587] /dvwa/: Suggested security header missing: strict-transport-security. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security
++ [750500] /dvwa/config/: Directory indexing found. See: CWE-548
++ [000998] /dvwa/config/: Configuration information may be available remotely.
++ [001384] /dvwa/?=PHPB8B5F2A0-3C92-11d3-A3A9-4C7B08C10000: PHP Easter Eggs reveals potentially sensitive information via HTTP requests that contain specific QUERY strings. See: https://labs.detectify.com/writeups/do-you-dare-to-show-your-php-easter-egg/
++ [001385] /dvwa/?=PHPE9568F36-D428-11d2-A769-00AA001ACF42: PHP Easter Egg reveals potentially sensitive information via HTTP requests that contain specific QUERY strings. See: https://labs.detectify.com/writeups/do-you-dare-to-show-your-php-easter-egg/
++ [001386] /dvwa/?=PHPE9568F34-D428-11d2-A769-00AA001ACF42: PHP Easter Egg reveals potentially sensitive information via HTTP requests that contain specific QUERY strings. See: https://labs.detectify.com/writeups/do-you-dare-to-show-your-php-easter-egg/
++ [001387] /dvwa/?=PHPE9568F35-D428-11d2-A769-00AA001ACF42: PHP Easter Egg reveals potentially sensitive information via HTTP requests that contain specific QUERY strings. See: https://labs.detectify.com/writeups/do-you-dare-to-show-your-php-easter-egg/
++ [001736] /dvwa/login/: This might be interesting.
++ [006333] /dvwa/login.php: Admin login page/section found.
++ [006530] /dvwa/.git/index: Git Index file may contain directory listing information.
++ [006609] /dvwa/.git/HEAD: Git HEAD file found. Full repo details may be present.
++ [006807] /dvwa/.git/config: Git config file found. Infos about repo details may be present.
++ [007342] /dvwa/: X-Frame-Options header is deprecated and was replaced with the Content-Security-Policy HTTP header with the frame-ancestors directive. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Frame-Options
++ [007352] /dvwa/: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/
++ 8232 requests: 0 errors and 37 items reported on the remote host
++ End Time:           2026-09-29 09:43:46 (GMT-4) (18 seconds)
+---------------------------------------------------------------------------
++ 1 host(s) tested

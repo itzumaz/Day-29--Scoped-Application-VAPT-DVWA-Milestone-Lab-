@@ -1,0 +1,25 @@
+┌──(kali㉿kali)-[~]
+└─$ nmap -sC -sV -p 80,443 192.168.145.134
+Starting Nmap 7.99 ( https://nmap.org ) at 2026-09-29 09:41 -0400
+Nmap scan report for 192.168.145.134
+Host is up (0.00084s latency).
+
+PORT    STATE SERVICE  VERSION
+80/tcp  open  http     Apache httpd 2.2.14 ((Ubuntu) mod_mono/2.4.3 PHP/5.3.2-1ubuntu4.30 with Suhosin-Patch proxy_html/3.0.1 mod_python/3.3.1 Python/2.6.5 mod_ssl/2.2.14 OpenSSL...)
+|_http-title: owaspbwa OWASP Broken Web Applications
+|_http-server-header: Apache/2.2.14 (Ubuntu) mod_mono/2.4.3 PHP/5.3.2-1ubuntu4.30 with Suhosin-Patch proxy_html/3.0.1 mod_python/3.3.1 Python/2.6.5 mod_ssl/2.2.14 OpenSSL/0.9.8k Phusion_Passenger/4.0.38 mod_perl/2.0.4 Perl/v5.10.1
+| http-methods: 
+|_  Potentially risky methods: TRACE
+443/tcp open  ssl/http Apache httpd 2.2.14 ((Ubuntu) mod_mono/2.4.3 PHP/5.3.2-1ubuntu4.30 with Suhosin-Patch proxy_html/3.0.1 mod_python/3.3.1 Python/2.6.5 mod_ssl/2.2.14 OpenSSL...)
+|_http-server-header: Apache/2.2.14 (Ubuntu) mod_mono/2.4.3 PHP/5.3.2-1ubuntu4.30 with Suhosin-Patch proxy_html/3.0.1 mod_python/3.3.1 Python/2.6.5 mod_ssl/2.2.14 OpenSSL/0.9.8k Phusion_Passenger/4.0.38 mod_perl/2.0.4 Perl/v5.10.1
+|_ssl-date: 2026-09-29T13:42:10+00:00; 0s from scanner time.
+| ssl-cert: Subject: commonName=owaspbwa
+| Not valid before: 2013-01-02T21:12:38
+|_Not valid after:  2022-12-31T21:12:38
+| http-methods: 
+|_  Potentially risky methods: TRACE
+|_http-title: owaspbwa OWASP Broken Web Applications
+MAC Address: 00:0C:29:3B:0C:7F (VMware)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 13.86 seconds
